@@ -1,0 +1,27 @@
+.jumbotron {
+    background: #42f4cb;
+    color: black;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+}
+
+body {
+    background: #42f4cb;
+    color: #f26a85
+}
+
+.container {
+    color: #f26a85
+}
+
+.display-4 {
+    color:#f26a85;
+}
+
+.btn-group {
+    margin-bottom: 10px;
+}
+
+.btn {
+    margin: 20px 20px;
+}
