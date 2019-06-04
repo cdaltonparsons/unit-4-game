@@ -1,63 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Crystal Collector!</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Crystal Collector!</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
 </head>
+
 <body>
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <h1 class="display-4">Crystal Collector!</h1>
-          <p class="lead">Welcome! The aim of the game is to exactly match the target score with your score.  Sounds easy enough.</p>
-          <p>At the beginning of each round, each of the four crystals below is assigned a random value, but you won't know what it is until you click each crystal</p>
-          <p>Like I said, your goal is to match the target score EXACTLY! If you go over at all, you will lose and the game will reset. Good Luck!</p>
-        </div>
-      </div>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Crystal Collector!</h1>
+      <p class="lead">Welcome! The aim of the game is to exactly match the target score with your score. Sounds easy
+        enough.</p>
+      <p>At the beginning of each round, each of the four crystals below is assigned a random value, but you won't know
+        what it is until you click each crystal</p>
+      <p>Like I said, your goal is to match the target score EXACTLY! If you go over at all, you will lose and the game
+        will reset. Good Luck!</p>
+    </div>
+  </div>
 
 
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="card left">
-            <div class="card-body">
-              <h5 class="card-title">Target Score:</h5>
-              <p class="target-score"></p>
-              <br>
-              <br>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6">
-          <div class="card right">
-            <div class="card-body">
-              <h5 class="card-title">Score Card!</h5>
-              <p>Wins: <span id="wins"></span></p>
-              <p>Losses: <span id="losses"></span></p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="btn-group" role="group" aria-label="Basic example">
-        <button type="button" class="btn btn-secondary" id="crystal-one"><img src="https://findicons.com/files/icons/2699/free_crystal_icons/128/amber.png" alt="crystal one"></button>
-        <button type="button" class="btn btn-secondary" id="crystal-two"><img src="https://findicons.com/files/icons/2699/free_crystal_icons/128/amethyst.png" alt="crystal two"></button>
-        <button type="button" class="btn btn-secondary" id="crystal-three"><img src="https://findicons.com/files/icons/2699/free_crystal_icons/128/zircon.png" alt="crystal three"></button>
-        <button type="button" class="btn btn-secondary" id="crystal-four"><img src="https://findicons.com/files/icons/2699/free_crystal_icons/128/gemstone.png" alt="crystal four"></button>
-      </div>
-
-      <div class="card">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card left">
         <div class="card-body">
-          <p>Your total score is: </p>
-          <p id="total-score"></p>
+          <h5 class="card-title">Target Score:</h5>
+          <p id="target-score"></p>
+          <br>
+          <br>
         </div>
       </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card right">
+        <div class="card-body">
+          <h5 class="card-title">Score Card!</h5>
+          <p>Wins: <span id="wins"></span></p>
+          <p>Losses: <span id="losses"></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-secondary crystal" id="crystal-one"><img
+        src="https://findicons.com/files/icons/2699/free_crystal_icons/128/amber.png" alt="crystal one"></button>
+    <button type="button" class="btn btn-secondary crystal" id="crystal-two"><img
+        src="https://findicons.com/files/icons/2699/free_crystal_icons/128/amethyst.png" alt="crystal two"></button>
+    <button type="button" class="btn btn-secondary crystal" id="crystal-three"><img
+        src="https://findicons.com/files/icons/2699/free_crystal_icons/128/zircon.png" alt="crystal three"></button>
+    <button type="button" class="btn btn-secondary crystal" id="crystal-four"><img
+        src="https://findicons.com/files/icons/2699/free_crystal_icons/128/gemstone.png" alt="crystal four"></button>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <p>Your total score is: </p>
+      <p id="total-score"></p>
+    </div>
+  </div>
 
 
-
+  <script src="assets/javascript/game.js"></script>
 </body>
+
 </html>
