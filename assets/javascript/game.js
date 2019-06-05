@@ -1,42 +1,56 @@
-// create and assign all global scope variables
 var wins = 0;
 var losses = 0;
-var targetScore = targetNumber(19, 120);
+var targetScore = randomNumber(19, 120);
 var userScore = 0;
-var crystalValues = [];
-function targetNumber(min, max) {
+var scoreStr = "";
+var images = [
+  "assets/images/amber.png",
+  "assets/images/amethyst.png",
+  "assets/images/salt_crystal.png",
+  "assets/images/zircon.png"
+];
+$("#wins").text(wins);
+$("#losses").text(losses);
+function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-function crystalValueRandomizer() {
-  for (var i = 0; i < 4; i++) {
-    crystalValues.push(Math.floor(Math.random() * 11 + 1));
+function crystals() {
+  for (var i = 0; i < images.length; i++) {
+    var div = $("<img>");
+    div.addClass("crystal");
+    div.attr("value", randomNumber(1, 12));
+    div.attr("src", images[i]);
+    $("#div-container").append(div);
   }
 }
 
 function reset() {
-  targetNumber();
+  targetScore = randomNumber(19, 120);
   userScore = 0;
-  crystalValueRandomizer();
+  $("#target-score").text(targetScore);
+  $("#total-score").text(userScore);
+  $("#div-container").empty();
+  $("#wins").text(wins);
+  $("#losses").text(losses);
+  images.sort(function() { return 0.5 - Math.random()})
+  crystals();
 }
+
 reset();
-console.log(targetScore)
-console.log(crystalValues)
 
-$(".crystal").on("click", function() {
-  alert("You clicked a crystal!");
+$("#div-container").on("click", ".crystal", function() {
+  scoreStr = $(this).attr("value");
+  var score = parseInt(scoreStr);
+  userScore += score;
+  $("#total-score").text(userScore);
+  if (userScore === targetScore) {
+    wins++;
+    reset();
+  } else if (userScore > targetScore) {
+    losses++;
+    reset();
+  }
+
+  console.log(userScore);
 });
-
-if (userScore === targetScore) {
-    wins++
-}
-
-// Grab the value of the crystal that was clicked on
-//Add that the the plauyer's score
-//with each click, we need to check whether the player won, lost, or needs to click again
-    //if the score is === the goal
-        //wins ++
-        //run the reset function (be sure to include in that function something that will update the page)
-    //if score > goal
-        //losses++
-        //run the same reset function

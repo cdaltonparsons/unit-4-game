@@ -1,1 +1,2 @@
 # unit-4-game
+In this game, your goal is to match the target score by clicking the four crystal buttons.  Each crystal has a randomly assigned value, which change each time the game is reset (whether you win or lose)

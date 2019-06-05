@@ -2,7 +2,8 @@
     background: #42f4cb;
     color: black;
     padding-bottom: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 1px;
+    padding-top: 20px;
 }
 
 body {
@@ -18,10 +19,7 @@ body {
     color:#f26a85;
 }
 
-.btn-group {
-    margin-bottom: 10px;
-}
 
-.btn {
-    margin: 20px 20px;
+#div-container {
+    margin-left: 397px;
 }
